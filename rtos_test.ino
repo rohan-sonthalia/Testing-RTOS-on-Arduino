@@ -42,6 +42,7 @@ void TaskButton(){
     vTaskResume(TaskOg_Handler);
     vTaskSuspend(TaskButton_Handler);
   }
+  vTaskDelay( 500 / portTICK_PERIOD_MS );
 }
 
 void loop() {
