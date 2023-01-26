@@ -16,7 +16,9 @@ void setup() {
   xTaskCreate(TaskButton, "Button Interrupt", 128, NULL, 1, &TaskButton_Handler);
   xTaskCreate(TaskOg, "Original Task", 128, NULL, 1, &TaskOg_Handler);
 
-  // vTaskStartScheduler();
+  vTaskStartScheduler();
+
+  vTaskSuspend(TaskButton_Handler);
 }
 
 void TaskOg(){
