@@ -43,9 +43,12 @@ void TaskOg(){
 }
 
 void TaskController(){
+  ps2x.read_gamepad();
   int xLJoystick = ps2x.Analog(PSS_LX);
+  
   Serial.print("JoyStick data: ");
   Serial.println(xLJoystick);
+  
   if(ps2x.Button(PSB_CIRCLE)){
     Serial.println("Button Pressed");
     Serial.println("Moving to Button Oriented Task");
@@ -66,5 +69,5 @@ void TaskButton(){
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Keep empty
 }
